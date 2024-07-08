@@ -14,7 +14,7 @@ public class Main {
         System.setProperty("sun.java2d.xrender", "true");
 
         DiscordApi api = new DiscordApiBuilder()
-                .setToken(System.getenv("MTI1OTgwNTE3OTM0NDE5NTU5NA.GWv80T.DJVjelT4q2l0q6k1emjeiqOzkEzsHEapbHbldA"))
+                .setToken("MTI1OTgwNTE3OTM0NDE5NTU5NA.GWv80T.DJVjelT4q2l0q6k1emjeiqOzkEzsHEapbHbldA")
                 .addIntents(Intent.MESSAGE_CONTENT,Intent.GUILD_MEMBERS,Intent.GUILDS)
                 .login()
                 .join();

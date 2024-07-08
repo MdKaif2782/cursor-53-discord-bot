@@ -18,7 +18,7 @@ public class WelcomeEvent implements ServerMemberJoinListener {
         try {
             // Create a welcome image
             ImageCreator welcomeImageCreator = new ImageCreator();
-            String username = serverMemberJoinEvent.getUser().getName();
+            String username = serverMemberJoinEvent.getUser().getDiscriminatedName();
             String mentionTag = serverMemberJoinEvent.getUser().getMentionTag();
             var systemChannel = serverMemberJoinEvent.getServer().getChannelsByName("welcome").get(0).asTextChannel().get();
             BufferedImage profilePic = serverMemberJoinEvent.getUser().getAvatar().asBufferedImage().get();
