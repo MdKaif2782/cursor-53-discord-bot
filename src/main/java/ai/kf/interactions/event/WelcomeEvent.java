@@ -1,10 +1,7 @@
 package ai.kf.interactions.event;
 
 import ai.kf.utils.ImageCreator;
-import org.javacord.api.entity.message.embed.EmbedBuilder;
-import org.javacord.api.event.server.member.ServerMemberEvent;
 import org.javacord.api.event.server.member.ServerMemberJoinEvent;
-import org.javacord.api.listener.message.MessageCreateListener;
 import org.javacord.api.listener.server.member.ServerMemberJoinListener;
 
 import javax.imageio.ImageIO;
@@ -34,6 +31,10 @@ public class WelcomeEvent implements ServerMemberJoinListener {
             baos.close();
             ByteArrayInputStream bais = new ByteArrayInputStream(imageInByte);
             systemChannel.sendMessage("Welcome " + mentionTag + "!", bais, "welcome.png");
+
+            //Give role
+            serverMemberJoinEvent.getServer().getRolesByName("member").get(0).addUser(serverMemberJoinEvent.getUser());
+
         } catch (InterruptedException | ExecutionException | IOException e) {
             throw new RuntimeException(e);
         }
