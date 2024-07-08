@@ -25,4 +25,4 @@ RUN ./gradlew shadowJar
 EXPOSE 8080
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "build/libs/cursor-53.jar"]
+ENTRYPOINT ["java", "-jar", "build/libs/cursor-53-discord-bot-1.0-SNAPSHOT-all.jar"]

@@ -19,16 +19,18 @@ dependencies {
     runtimeOnly 'org.apache.logging.log4j:log4j-core:2.17.0'
 }
 
-test {
-    useJUnitPlatform()
-}
-
 task stage(dependsOn: ['build','shadowJar', 'clean', 'test'])
 build.mustRunAfter clean
 build.mustRunAfter test
 
 jar {
     manifest{
-        attributes 'Class-Path': '/libs/cursor-53.jar', 'Main-Class': 'Main'
+        attributes 'Class-Path': '/libs/cursor-53.jar', 'Main-Class': 'ai.kf.Main'
     }
 }
+
+test {
+    useJUnitPlatform()
+}
+
+
