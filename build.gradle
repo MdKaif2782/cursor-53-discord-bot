@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group = 'ai.kf'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    //Javacord
+    implementation 'org.javacord:javacord:3.8.0'
+    //Logging
+    runtimeOnly 'org.apache.logging.log4j:log4j-core:2.17.0'
+}
+
+test {
+    useJUnitPlatform()
+}
